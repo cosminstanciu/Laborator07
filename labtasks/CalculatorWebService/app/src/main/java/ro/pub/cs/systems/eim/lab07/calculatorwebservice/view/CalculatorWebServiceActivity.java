@@ -8,7 +8,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import cz.msebera.android.httpclient.client.methods.HttpGet;
 import ro.pub.cs.systems.eim.lab07.calculatorwebservice.R;
+import ro.pub.cs.systems.eim.lab07.calculatorwebservice.general.Constants;
 import ro.pub.cs.systems.eim.lab07.calculatorwebservice.network.CalculatorWebServiceAsyncTask;
 
 public class CalculatorWebServiceActivity extends AppCompatActivity {
@@ -30,6 +32,7 @@ public class CalculatorWebServiceActivity extends AppCompatActivity {
 
             CalculatorWebServiceAsyncTask calculatorWebServiceAsyncTask = new CalculatorWebServiceAsyncTask(resultTextView);
             calculatorWebServiceAsyncTask.execute(operator1, operator2, operation, method);
+
         }
     }
 
@@ -45,5 +48,7 @@ public class CalculatorWebServiceActivity extends AppCompatActivity {
         methodSpinner = (Spinner)findViewById(R.id.method_spinner);
         displayResultButton = (Button)findViewById(R.id.display_result_button);
         displayResultButton.setOnClickListener(displayResultButtonClickListener);
+
+
     }
 }
